@@ -4,7 +4,7 @@ pragma solidity >=0.4.16 <0.9.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract SimpleStorage {
+contract SimpleStorage is ERC20, Ownable(msg.sender) {
     uint storedData;
 
     function set(uint x) public {
